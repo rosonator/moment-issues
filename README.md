@@ -1,28 +1,24 @@
-# MyApp
+# Moment Issues
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0. Use the related commands to run & build.
 
-## Development server
+## Code Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Issue component:
+	- issueList: Array<Issues>
+	- pageActual: number (initialized as 1)
+	- getIssues (optional boolean): sums 1 to pageActual when true, substracts 1 when false. When undefined sums nothing. Uses pageActual to reset issuList with data from service
 
-## Code scaffolding
+	On init calls getIssues.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Issue service:
 
-## Build
+	-getIssues (page: number): makes a GET call to 'https://api.github.com/repos/moment/moment/issues?page=PAGE' repository. Formats it to convert the input in an array of Issues
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Issue model:
+	
+	- name: Username
+	- title: Issue title
+	- message: Issue body
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
