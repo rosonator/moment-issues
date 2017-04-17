@@ -5,11 +5,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Code Description
 
 Issue component:
+
 	- issueList: Array<Issues>
 	- pageActual: number (initialized as 1)
 	- getIssues (optional boolean): sums 1 to pageActual when true, substracts 1 when false. When undefined sums nothing. Uses pageActual to reset issuList with data from service
 
-	On init calls getIssues.
+ngOnInit calls getIssues.
 
 Issue service:
 
