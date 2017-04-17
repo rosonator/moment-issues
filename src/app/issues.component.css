@@ -10,6 +10,7 @@
 	margin-top:20px;
 	border-radius: 4px;	
 	background-color: #CCC;
+	font-size: 12px;
 }
 
 .issue .name {
@@ -17,7 +18,15 @@
 	font-size: 13px;
 }
 
+.issue .title {
+	text-decoration: underline;
+	padding-bottom:  10px;
+}
+
 .issue .message {
-	font-size: 12px;
 	font-style: italic;
+}
+
+.align-right {
+	text-align: right
 }

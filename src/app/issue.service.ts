@@ -11,7 +11,8 @@ export class IssueService {
   private formatIssues(response: Response) {
     return response.json().map(obj =>  <Issue>({
       name: obj.user.login,
-      message: obj.body,
+      title: obj.title,
+      message: obj.body
     }))
   };
 
@@ -19,8 +20,8 @@ export class IssueService {
     
   constructor(private http: Http) {}
 
-  getIssues(): Observable<Issue[]> {
-    let url = 'https://api.github.com/repos/moment/moment/issues';
+  getIssues(page: number): Observable<Issue[]> {
+    let url = 'https://api.github.com/repos/moment/moment/issues?page=' + page;
     //let headers = new Headers({ 'Content-Type': 'application/json' });
     //let options = new RequestOptions({ headers: headers });
     return this.http

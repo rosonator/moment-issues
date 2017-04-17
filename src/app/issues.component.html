@@ -4,13 +4,30 @@
 </div>
   
 <div class="container">
-	<div class="row issue"
+	<div class="pagination row">
+		<div class="col-sm-6">
+			<button class="btn btn-primary" 
+					(click)="getIssues(false)"
+					[disabled]="pageActual === 1"> 
+				<< 
+			</button>
+		</div>
+		<div class="col-sm-6 align-right">
+			<button class="btn btn-primary" 
+					(click)="getIssues(true)"
+					[disabled]="!issueList"> 
+				>> 
+			</button>
+		</div>
+	</div>
+		<div class="row issue"
 		*ngFor="let issue of issueList">
 		<div class="name col-sm-3">
 			{{issue.name}} 
 			</div>
-		<div class="message col-sm-9">
-			{{issue.message}} 
+		<div class="col-sm-9">
+			<div class="title">{{issue.title}}</div>
+			<div class="message">{{issue.message}}</div>
 		</div>					
 	</div>
 </div>

@@ -11,12 +11,18 @@ import { Issue } from './models/issue';
 
 export class IssuesComponent implements OnInit  {
 	issueList: Array<Issue>;
+	pageActual: number = 1;
 
   	constructor (private issueService: IssueService) {
   	}
 
   	ngOnInit() {
-      this.issueService.getIssues().subscribe((resp) => this.issueList = resp);
+      this.getIssues();
     }
 
+    getIssues (next?: boolean) {
+    	if (next) this.pageActual ++;
+    	else if (this.pageActual > 1) this.pageActual --;
+    	this.issueService.getIssues(this.pageActual).subscribe((resp) => this.issueList = resp);
+    }
 }
