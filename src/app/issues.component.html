@@ -1,0 +1,16 @@
+<div class="jumbotron">
+	<h2>Moment's Issues</h2>
+	<span class="subheading">"I gotta tones of issues!"</span>
+</div>
+  
+<div class="container">
+	<div class="row issue"
+		*ngFor="let issue of issueList">
+		<div class="name col-sm-3">
+			{{issue.name}} 
+			</div>
+		<div class="message col-sm-9">
+			{{issue.message}} 
+		</div>					
+	</div>
+</div>

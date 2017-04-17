@@ -1,0 +1,23 @@
+.jumbotron {
+	text-align: center;
+}
+.jumbotron .subheading {
+	font-style: italic;
+}
+
+.issue {
+	padding: 20px;
+	margin-top:20px;
+	border-radius: 4px;	
+	background-color: #CCC;
+}
+
+.issue .name {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.issue .message {
+	font-size: 12px;
+	font-style: italic;
+}
